@@ -3,6 +3,8 @@ window.levelData = {
     title: "Level 1 - Teleporter's Maze",
     music: "../Sound/Level Soundtracks/level1.mp3",
     matrix: [
+        // colors
+        [-5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5],
         // Row 1 - Starting platform with player
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0],
         // Row 2 - First challenge
