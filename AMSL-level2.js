@@ -1,6 +1,6 @@
 window.levelData = {
-    id: 4,
-    title: "Level 4 - Teleporter's Challenge",
+    id: 5,
+    title: "Level 2 - Teleporter's Challenge",
     matrix: [
         [-5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5],
         // Row 1 - Starting area
@@ -36,3 +36,10 @@ window.levelData = {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
 };
+// Registry entry for this level
+window.levelRegistry = window.levelRegistry || [];
+window.levelRegistry.push({
+    id: 5,
+    title: "Level 2 - Strange Teleporters",
+    difficulty: 'Hard'
+});
