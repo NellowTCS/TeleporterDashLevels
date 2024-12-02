@@ -28,9 +28,8 @@ jobs:
         const fs = require("fs");
 
         // Initialize Firebase Admin with Service Account
-        const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
         admin.initializeApp({
-          credential: admin.credential.cert(serviceAccount),
+          credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)),
         });
 
         const db = admin.firestore();
