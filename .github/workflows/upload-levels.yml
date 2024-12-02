@@ -1,0 +1,72 @@
+name: Upload Levels to GitHub
+
+on:
+  schedule:
+    - cron: "0 * * * *" # Runs every hour
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  upload-levels:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Firebase Admin SDK
+      run: npm install firebase-admin
+
+    - name: Fetch Levels from Firebase
+      run: |
+        node <<EOF
+        const admin = require("firebase-admin");
+        const fs = require("fs");
+
+        // Initialize Firebase Admin with Service Account
+        const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+        admin.initializeApp({
+          credential: admin.credential.cert(serviceAccount),
+        });
+
+        const db = admin.firestore();
+
+        // Fetch levels from Firestore
+        async function fetchLevels() {
+          const snapshot = await db.collection("levels").where("isUploaded", "==", false).get();
+          if (snapshot.empty) {
+            console.log("No new levels to upload.");
+            return;
+          }
+
+          snapshot.forEach(async (doc) => {
+            const levelData = doc.data();
+            const levelFileName = `${doc.id}.json`;
+
+            // Write level to the root directory
+            fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
+
+            // Mark level as uploaded
+            await db.collection("levels").doc(doc.id).update({ isUploaded: true });
+            console.log(`Level ${doc.id} processed.`);
+          });
+        }
+
+        fetchLevels().catch(console.error);
+        EOF
+      env:
+        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+
+    - name: Commit and Push Levels
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add *.json
+        git commit -m "Add new levels to root"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.TELEPORTERDASHTOKEN }}
