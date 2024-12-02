@@ -43,7 +43,7 @@ jobs:
             return;
           }
 
-          snapshot.forEach(async (doc) => {
+          for (const doc of snapshot.docs) {
             const levelData = doc.data();
             const levelFileName = `${doc.id}.json`;
 
@@ -53,7 +53,7 @@ jobs:
             // Mark level as uploaded
             await db.collection("levels").doc(doc.id).update({ isUploaded: true });
             console.log(`Level ${doc.id} processed.`);
-          });
+          }
         }
 
         fetchLevels().catch(console.error);
