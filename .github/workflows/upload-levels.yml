@@ -44,14 +44,19 @@ jobs:
 
           for (const doc of snapshot.docs) {
             const levelData = doc.data();
-            const levelFileName = `${doc.id}.js`; // Correctly defined template literal
+            const levelFileName = \`\${doc.id}.js\`; // Correctly defined template literal
+
+            // Debugging option
+            if (process.env.DEBUG_LEVEL_NAME === 'true') {
+              console.log('Debugging level file name:', levelFileName);
+            }
 
             // Write level to the root directory
             fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
 
             // Mark level as uploaded
             await db.collection("levels").doc(doc.id).update({ isUploaded: true });
-            console.log(`Level ${doc.id} processed.`);
+            console.log(\`Level \${doc.id} processed.\`);
           }
         }
 
@@ -59,12 +64,13 @@ jobs:
         EOF
       env:
         FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        DEBUG_LEVEL_NAME: ${{ secrets.DEBUG_LEVEL_NAME }} # Set to 'true' for debugging
 
     - name: Commit and Push Levels
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-        git add *.json
+        git add *.js
         git commit -m "Add new levels to root"
         git push
       env:
