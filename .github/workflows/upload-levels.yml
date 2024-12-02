@@ -27,9 +27,9 @@ jobs:
     - name: Authenticate Firebase
       run: |
         echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase-key.json
-        firebase login:ci --token "$(cat firebase-key.json)"
-      env:
-        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        firebase auth:import-service-account-key --key-file firebase-key.json
+        firebase use --add "$(cat firebase-key.json | jq -r '.project_id')"
+
 
     - name: Fetch Levels from Firebase
       run: |
