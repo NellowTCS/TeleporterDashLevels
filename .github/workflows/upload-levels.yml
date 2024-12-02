@@ -44,14 +44,14 @@ jobs:
 
           for (const doc of snapshot.docs) {
             const levelData = doc.data();
-            const levelFileName = `\${doc.id}.json`; // Escaped template literal
+            const levelFileName = `${doc.id}.json`; // Correctly defined template literal
 
             // Write level to the root directory
             fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
 
             // Mark level as uploaded
             await db.collection("levels").doc(doc.id).update({ isUploaded: true });
-            console.log(`Level \${doc.id} processed.`);
+            console.log(`Level ${doc.id} processed.`);
           }
         }
 
