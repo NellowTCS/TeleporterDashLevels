@@ -1,80 +1,92 @@
 name: Upload Levels to GitHub
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 * * * *" # Runs every hour
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
   upload-levels:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+    - name: Set Up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
-      # Install dependencies (e.g., Firebase admin SDK)
-      - name: Install dependencies
-        run: |
-          npm install firebase-admin
-          npm install
+    - name: Install Firebase Admin SDK
+      run: npm install firebase-admin
 
-      # Fetch levels from Firestore and upload to GitHub using inline JavaScript
-      - name: Fetch Levels from Firebase
-        run: |
-          node -e "
-            const admin = require('firebase-admin');
-            const fs = require('fs');
-            
-            // Initialize Firebase Admin with Service Account
-            admin.initializeApp({
-              credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)),
-            });
-            
-            const db = admin.firestore();
+    - name: Install Firebase CLI
+      run: npm install -g firebase-tools
 
-            // Fetch levels from Firestore
-            async function fetchLevels() {
-              const snapshot = await db.collection('levels').where('isUploaded', '==', false).get();
-              if (snapshot.empty) {
-                console.log('No new levels to upload.');
-                return;
-              }
+    - name: Authenticate Firebase
+      run: |
+        echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase-key.json
+        firebase login:ci --token "$(cat firebase-key.json)"
+      env:
+        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
-              for (const doc of snapshot.docs) {
-                const levelData = doc.data();
-                const levelFileName = \`\${doc.id}.js\`; // Template literal is evaluated properly
+    - name: Fetch Levels from Firebase
+      run: |
+        node <<EOF
+        const admin = require("firebase-admin");
+        const fs = require("fs");
 
-                // Write level data to a .js file with proper export structure
-                const levelFileContent = \`module.exports = \${JSON.stringify(levelData.data, null, 2)};\`;
+        // Initialize Firebase Admin with Service Account
+        admin.initializeApp({
+          credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)),
+        });
 
-                fs.writeFileSync(levelFileName, levelFileContent);
-                console.log(\`Level \${doc.id} saved as \${levelFileName}\`);
-                
-                // Mark level as uploaded
-                await db.collection('levels').doc(doc.id).update({ isUploaded: true });
-              }
+        const db = admin.firestore();
+
+        // Fetch levels from Firestore
+        async function fetchLevels() {
+          const snapshot = await db.collection("levels").where("isUploaded", "==", false).get();
+          if (snapshot.empty) {
+            console.log("No new levels to upload.");
+            return;
+          }
+
+          for (const doc of snapshot.docs) {
+            const levelData = doc.data();
+            const levelFileName = \`\${doc.id}.js\`; // Correctly defined template literal
+
+            // Debugging option
+            if (process.env.DEBUG_LEVEL_NAME === 'true') {
+              console.log('Debugging level file name:', levelFileName);
             }
-            
-            fetchLevels().catch(console.error);
-          "
-        env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
 
-      # Commit and push levels to the repository
-      - name: Commit and Push Levels
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add *.js
-          git commit -m "Add new levels to root"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            // Write level to the root directory
+            fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
+
+            // Mark level as uploaded
+            await db.collection("levels").doc(doc.id).update({ isUploaded: true });
+            console.log(\`Level \${doc.id} processed.\`);
+          }
+        }
+
+        fetchLevels().catch(console.error);
+        EOF
+      env:
+        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        DEBUG_LEVEL_NAME: ${{ secrets.DEBUG_LEVEL_NAME }} # Set to 'true' for debugging
+
+    - name: Commit and Push Levels
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add *.js
+        git commit -m "Add new levels to root"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.TELEPORTERDASHTOKEN }}
+
+    - name: Deploy Firebase Rules
+      run: firebase deploy --only database
+      env:
+        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
