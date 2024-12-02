@@ -44,7 +44,7 @@ jobs:
 
           for (const doc of snapshot.docs) {
             const levelData = doc.data();
-            const levelFileName = `${doc.id}.json`; // Correctly defined template literal
+            const levelFileName = `${doc.id}.js`; // Correctly defined template literal
 
             // Write level to the root directory
             fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
