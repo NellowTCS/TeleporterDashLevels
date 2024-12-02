@@ -18,18 +18,16 @@ jobs:
       with:
         node-version: 18
 
-    - name: Install Firebase Admin SDK
-      run: npm install firebase-admin
-
-    - name: Install Firebase CLI
-      run: npm install -g firebase-tools
+    - name: Install Firebase Admin SDK and Firebase Tools
+      run: |
+        npm install firebase-admin
+        npm install -g firebase-tools
 
     - name: Authenticate Firebase
       run: |
         echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase-key.json
         export GOOGLE_APPLICATION_CREDENTIALS=firebase-key.json
-        firebase projects:list
-
+        firebase use --add # Ensures Firebase CLI knows which project to use
 
     - name: Fetch Levels from Firebase
       run: |
@@ -85,8 +83,3 @@ jobs:
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.TELEPORTERDASHTOKEN }}
-
-    - name: Deploy Firebase Rules
-      run: firebase deploy --only database
-      env:
-        FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
