@@ -40,6 +40,6 @@ window.levelData = {
 window.levelRegistry = window.levelRegistry || [];
 window.levelRegistry.push({
     id: 5,
-    title: "Level 2 - Strange Teleporters",
+    title: "Level 2 - Teleporter's Challenge",
     difficulty: 'Hard'
 });
