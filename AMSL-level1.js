@@ -1,5 +1,5 @@
 window.levelData = {
-    id: 5,
+    id: 4,
     title: "Level 1 - Teleporter's Maze",
     music: "../Sound/Level Soundtracks/level1.mp3",
     matrix: [
@@ -40,7 +40,7 @@ window.levelData = {
 // Registry entry for this level
 window.levelRegistry = window.levelRegistry || [];
 window.levelRegistry.push({
-    id: 5,
+    id: 4,
     title: "Level 1 - Teleporter's Maze",
     difficulty: "Easy"
 });
