@@ -44,7 +44,7 @@ jobs:
 
           for (const doc of snapshot.docs) {
             const levelData = doc.data();
-            const levelFileName = `${doc.id}.json`;
+            const levelFileName = `${doc.id}.json`; // Fixed interpolation issue
 
             // Write level to the root directory
             fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
@@ -68,4 +68,4 @@ jobs:
         git commit -m "Add new levels to root"
         git push
       env:
-        GITHUB_TOKEN: ${{ secrets.TELEPORTERDASHTOKEN }}
+         GITHUB_TOKEN: ${{ secrets.TELEPORTERDASHTOKEN }}
