@@ -23,9 +23,9 @@ jobs:
 
     - name: Fetch Levels from Firebase
       run: |
-        node <<EOF
-        const admin = require("firebase-admin");
-        const fs = require("fs");
+        node -e "
+        const admin = require('firebase-admin');
+        const fs = require('fs');
 
         // Initialize Firebase Admin with Service Account
         admin.initializeApp({
@@ -36,9 +36,9 @@ jobs:
 
         // Fetch levels from Firestore
         async function fetchLevels() {
-          const snapshot = await db.collection("levels").where("isUploaded", "==", false).get();
+          const snapshot = await db.collection('levels').where('isUploaded', '==', false).get();
           if (snapshot.empty) {
-            console.log("No new levels to upload.");
+            console.log('No new levels to upload.');
             return;
           }
 
@@ -55,13 +55,13 @@ jobs:
             fs.writeFileSync(levelFileName, JSON.stringify(levelData.data, null, 2));
 
             // Mark level as uploaded
-            await db.collection("levels").doc(doc.id).update({ isUploaded: true });
+            await db.collection('levels').doc(doc.id).update({ isUploaded: true });
             console.log(\`Level \${doc.id} processed.\`);
           }
         }
 
         fetchLevels().catch(console.error);
-        EOF
+        "
       env:
         FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         DEBUG_LEVEL_NAME: ${{ secrets.DEBUG_LEVEL_NAME }} # Set to 'true' for debugging
