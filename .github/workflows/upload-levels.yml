@@ -27,8 +27,8 @@ jobs:
     - name: Authenticate Firebase
       run: |
         echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > firebase-key.json
-        firebase auth:import-service-account-key --key-file firebase-key.json
-        firebase use --add "$(cat firebase-key.json | jq -r '.project_id')"
+        export GOOGLE_APPLICATION_CREDENTIALS=firebase-key.json
+        firebase projects:list
 
 
     - name: Fetch Levels from Firebase
