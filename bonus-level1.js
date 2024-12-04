@@ -513,7 +513,7 @@ window.levelData = {
                 0,
                 0
         ]
-];
+],
 // Registry entry for this level
 window.levelRegistry = window.levelRegistry || [];
 window.levelRegistry.push({
