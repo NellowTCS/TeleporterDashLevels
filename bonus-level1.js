@@ -1,6 +1,6 @@
 window.levelData = {
     id: 6,
-    title: "Level T - For Giggles",
+    title: "Level 3 - For Giggles",
     music: "../Sound/Level Soundtracks/level5.mp3",
     matrix = [
         [
@@ -518,6 +518,6 @@ window.levelData = {
 window.levelRegistry = window.levelRegistry || [];
 window.levelRegistry.push({
     id: 6,
-    title: "Level T - For Giggles",
+    title: "Level 3 - For Giggles",
     difficulty: "Auto"
 });
