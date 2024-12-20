@@ -1,10 +1,9 @@
-Level: Idea
-Author: NellowTCS
+Level: IDK
+Author: N
 Difficulty: Easy
-Level ID: 13
-Music File Required: ../Sound/Level Soundtracks/17 Uzi and N_ The Drone Killers.mp3
+Level ID: 14
+Music File Required: ../Sound/Level Soundtracks/level1.mp3
 Setup Instructions:
 1. Extract all files from this zip
-2. Copy "level13.js" to the Levels directory
-3. Copy the music file to Sound/Level Soundtracks directory
+2. Copy "level14.js" to the Levels directory
 The level will automatically appear in the menu when you restart the game.
