@@ -17,14 +17,13 @@ jobs:
       # Set up the target repository
       - name: Clone Target Repository
         run: |
-          git clone https://github.com/TeleporterDash/teleporterdash.github.io>.git target-repo
+          git clone https://github.com/TeleporterDash/teleporterdash.github.io.git target-repo
         env:
           GITHUB_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }} # Create and store this in secrets
 
       # Copy files to the target repository
       - name: Copy Files
         run: |
-          mkdir -p target-repo/<folder_name> # Ensure the folder exists
           cp -r Sound/LevelSoundtracks/* target-repo/Sound/LevelSoundtracks/ # Copy files
 
       # Commit and push changes to the target repository
