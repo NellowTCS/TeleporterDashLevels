@@ -24,7 +24,7 @@ jobs:
       # Copy files to the target repository
       - name: Copy Files
         run: |
-          cp -r Sound/LevelSoundtracks/* target-repo/Sound/LevelSoundtracks/ # Copy files
+          cp -r Sound/LevelSoundtracks/ target-repo/Sound/LevelSoundtracks/ # Copy files
 
       # Commit and push changes to the target repository
       - name: Commit and Push Changes
