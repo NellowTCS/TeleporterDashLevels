@@ -1,7 +1,7 @@
 name: Sync Level Soundtracks
 
 on:
-  workflow_dispatch: # Trigger manually; you can also use other triggers like push or schedule
+  workflow_dispatch: # Trigger manually
 
 jobs:
   copy-files:
@@ -17,10 +17,11 @@ jobs:
 
       # Clone the target repository
       - name: Clone Target Repository
-        run: |
-          git clone https://github.com/TeleporterDash/teleporterdash.github.io.git target-repo
-        env:
-          GITHUB_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }} # Add the token in repo secrets
+        uses: actions/checkout@v3
+        with:
+          repository: TeleporterDash/teleporterdash.github.io
+          token: ${{ secrets.TARGET_REPO_TOKEN }}
+          path: target-repo
 
       # Copy files to the target repository
       - name: Copy Level Soundtracks
@@ -35,7 +36,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Sync Level Soundtracks from source repo"
-          git push
+          git commit -m "Sync Level Soundtracks from source repo" || echo "No changes to commit"
+          git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }} # Reuse the token for pushing
+          GITHUB_TOKEN: ${{ secrets.TARGET_REPO_TOKEN }}
