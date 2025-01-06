@@ -36,7 +36,7 @@ window.levelData = {
         [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 5, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         // Row 15 - Empty space
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ]
+    ],
     difficulty: "Easy",
     colorTransitionDuration: 0.5, 
     colorTransitionDelay: 0.1  
