@@ -1,5 +1,6 @@
 window.levelData = {
     id: 4,
+    author: "ChatGPT",
     title: "Level 1 - Teleporter's Maze",
     music: "../Sound/Level Soundtracks/level1.mp3",
     matrix: [
@@ -36,11 +37,8 @@ window.levelData = {
         // Row 15 - Empty space
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
+    difficulty: "Easy",
+    colorTransitionDuration: 0.5, 
+    colorTransitionDelay: 0.1  
 };
-// Registry entry for this level
-window.levelRegistry = window.levelRegistry || [];
-window.levelRegistry.push({
-    id: 4,
-    title: "Level 1 - Teleporter's Maze",
-    difficulty: "Easy"
-});
+
