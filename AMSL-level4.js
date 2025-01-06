@@ -1,7 +1,7 @@
 window.levelData = {
     id: 7,
     author: "ChatGPT",
-    title: "Level 3 - Gravity Rush",
+    title: "Level 4 - Gravity Rush",
     music: "../Sound/Level Soundtracks/level3.mp3",
     matrix: [
         // Platform (1), Spike (2), and Teleporter (3), with color codes in top row
