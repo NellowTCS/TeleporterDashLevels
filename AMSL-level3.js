@@ -1,7 +1,7 @@
 window.levelData = {
     id: 6,
     author: "ChatGPT",
-    title: "Level 2 - Teleportation Chaos",
+    title: "Level 3 - Teleportation Chaos",
     music: "../Sound/Level Soundtracks/level2.mp3",
     matrix: [
         // Row-by-row matrix layout with teleporters (represented by "3"), obstacles ("2"), and safe paths ("0")
