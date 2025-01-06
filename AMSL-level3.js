@@ -1,5 +1,5 @@
 window.levelData = {
-    id: 2,
+    id: 6,
     author: "ChatGPT",
     title: "Level 2 - Teleportation Chaos",
     music: "../Sound/Level Soundtracks/level2.mp3",
