@@ -1,6 +1,6 @@
 window.levelData = {
     id: 3,
-    author: "ChatGPT",
+    author: "ChatGPT",    // Creator of the level
     title: "Level 3 - Spikes & Teleports",
     music: "../Sound/Level Soundtracks/level3.mp3",
     matrix: [
@@ -13,7 +13,7 @@ window.levelData = {
         [0, 0, 0, 2, 0, 0, 1, 2, 0, 2, 0, 0, 0, 3, 0, 0, 2, 0, 0, 0, 4],
         [2, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 2, 0, 3, 2, 0, 0, 0, 0]
     ],
-    difficulty: "Hard",
-    colorTransitionDuration: 0.5,
-    colorTransitionDelay: 0.1
+    difficulty: "Easy",
+    colorTransitionDuration: 0.5, 
+    colorTransitionDelay: 0.1    
 };
