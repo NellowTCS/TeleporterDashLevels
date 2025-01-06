@@ -1,6 +1,6 @@
 // Level 1: EE
 window.levelData = {
-    id: 1,
+    id: 6,
     title: "EE",
     author: "NellowTCS",
     difficulty: "Hard",
