@@ -1,5 +1,6 @@
 window.levelData = {
     id: 5,
+    author: "ChatGPT",
     title: "Level 2 - Teleporter's Challenge",
     matrix: [
         [-5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5, -5],
@@ -35,11 +36,7 @@ window.levelData = {
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
+    difficulty: "Easy",
+    colorTransitionDuration: 0.5, 
+    colorTransitionDelay: 0.1  
 };
-// Registry entry for this level
-window.levelRegistry = window.levelRegistry || [];
-window.levelRegistry.push({
-    id: 5,
-    title: "Level 2 - Teleporter's Challenge",
-    difficulty: 'Hard'
-});
