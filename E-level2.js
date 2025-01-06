@@ -1,4 +1,3 @@
-// Level 1: EE
 window.levelData = {
     id: 6,
     title: "EE",
