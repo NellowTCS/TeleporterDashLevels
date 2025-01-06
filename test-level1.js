@@ -1,8 +1,7 @@
-// Level 14: IDK
 window.levelData = {
-    id: 14,
+    id: 15,
     title: "IDK",
-    author: "N",
+    author: "NellowTCS",
     difficulty: "Easy",
     matrix: [
     [
