@@ -1,4 +1,4 @@
-window.levelData = [
+window.levelData = {
     id: 1,
     author: "ChatGPT",
     title: "Level 1 - Icicle Madness",
