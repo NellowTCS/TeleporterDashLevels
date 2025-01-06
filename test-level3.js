@@ -1,6 +1,5 @@
-// Level 13: Idea
 window.levelData = {
-    id: 13,
+    id: 17,
     title: "Idea",
     author: "NellowTCS",
     difficulty: "Easy",
