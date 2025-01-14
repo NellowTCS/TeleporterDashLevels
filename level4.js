@@ -1,6 +1,6 @@
-// Level 4: Daily Level Challenge 1
+// Level 19: Daily Level Challenge 1
 window.levelData = {
-    id: 4,
+    id: 19,
     title: "Daily Level Challenge 1",
     author: "NellowTCS",
     difficulty: "Easy",
