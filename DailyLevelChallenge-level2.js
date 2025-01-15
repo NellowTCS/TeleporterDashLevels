@@ -1,6 +1,6 @@
-// Level 0: Daily Level Challenge 2
+// Level 20: Daily Level Challenge 2
 window.levelData = {
-    id: 0,
+    id: 20,
     title: "Daily Level Challenge 2",
     author: "NellowTCS",
     difficulty: "Normal",
