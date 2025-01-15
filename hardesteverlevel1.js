@@ -1,6 +1,6 @@
-// Level 0: Hardest Level Ever
+// Level 21: Hardest Level Ever
 window.levelData = {
-    id: 0,
+    id: 21,
     title: "Hardest Level Ever",
     author: "Unknown Author",
     difficulty: "Super Demon",
