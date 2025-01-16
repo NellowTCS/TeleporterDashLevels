@@ -1,6 +1,6 @@
-// Level 1: Daily Level Challenge 3
+// Level 22: Daily Level Challenge 3
 window.levelData = {
-    id: 1,
+    id: 22,
     title: "Daily Level Challenge 3",
     author: "NellowTCS",
     difficulty: "Easy",
