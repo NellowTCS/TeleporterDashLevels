@@ -1,5 +1,5 @@
 window.levelData = {
-    id: 23,
+    id: 7,
     author: "Claude",
     title: "Teleporter's Trial",
     music: "../Sound/Level Soundtracks/level2.mp3",
