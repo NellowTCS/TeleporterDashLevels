@@ -1,5 +1,5 @@
 window.levelData = {
-    id: 24,
+    id: 9,
     author: "Claude",    // Creator of the level
     title: "Level 3 - Teleporter's Trial",
     music: "../Sound/Level Soundtracks/level3.mp3",
