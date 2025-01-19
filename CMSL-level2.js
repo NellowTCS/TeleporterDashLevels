@@ -1,5 +1,5 @@
 window.levelData = {
-    id: 8,
+    id: 2,
     author: "Claude",    // Creator of the level
     title: "Level 2 - Rainbow Rush",
     music: "../Sound/Level Soundtracks/level2.mp3",
