@@ -1,9 +1,9 @@
-// Level 0: Daily Level Challenge 4
+// Level 26: Daily Level Challenge 4
 window.levelData = {
-    id: 0,
+    id: 26,
     title: "Daily Level Challenge 4",
     author: "NellowTCS",
-    difficulty: "Easy",
+    difficulty: "Normal",
     matrix: [
     [
         1,
