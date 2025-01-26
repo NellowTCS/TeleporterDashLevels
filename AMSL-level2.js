@@ -26,7 +26,7 @@ window.levelData = {
     ],
     
     difficulty: "Easy",
-    music: 
+    music: "../Sound/Level Soundtracks/level2.mp3",
     colorTransitionDuration: 0.5, 
     colorTransitionDelay: 0.1  
 };
