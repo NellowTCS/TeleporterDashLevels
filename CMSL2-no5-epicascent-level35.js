@@ -1,7 +1,7 @@
 // Level 35: Epic Ascent
 window.levelData = {
     id: 35,
-    title: "Epic Ascent",
+    title: "Level 5 - Epic Ascent",
     author: "Claude",
     difficulty: "Expert",
     matrix: [
@@ -738,7 +738,7 @@ window.levelData = {
         0
     ]
 ],
-    music: "../Sound/Level Soundtracks/level1.ogg",
+    music: "../Sound/Level Soundtracks/level5.ogg",
     colorTransitionDuration: 0.5, 
     colorTransitionDelay: 0.1    
 };
