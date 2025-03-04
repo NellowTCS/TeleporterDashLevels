@@ -1,7 +1,7 @@
 // Level 40: Vertical Adventure
 window.levelData = {
     id: 40,
-    title: "Vertical Adventure",
+    title: "Level 1 - Vertical Adventure",
     author: "Claude",
     difficulty: "Expert",
     matrix: [
