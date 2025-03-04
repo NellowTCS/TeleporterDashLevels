@@ -1,6 +1,6 @@
-// Level 21: milo hard level
+// Level: milo hard level
 window.levelData = {
-    id: 21,
+    id: 23,
     title: "milo hard level",
     author: "milo",
     difficulty: "Insane",
