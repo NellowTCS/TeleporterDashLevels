@@ -1,7 +1,7 @@
-// Level 5: Rainbow Rush
+// Level 6: Rainbow Rush
 window.levelData = {
     id: 34,
-    title: "Rainbow Rush",
+    title: "Level 6 - Rushing Light",
     author: "Claude",
     difficulty: "Easy",
     matrix: [
