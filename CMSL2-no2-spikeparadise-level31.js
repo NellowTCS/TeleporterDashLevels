@@ -1,7 +1,7 @@
 // Level 2: Spike Paradise
 window.levelData = {
     id: 31,
-    title: "Spike Paradise",
+    title: "Level 2 - Spike Paradise",
     author: "Claude",
     difficulty: "Hard",
     matrix: [
