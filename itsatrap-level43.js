@@ -1,7 +1,7 @@
 // Level 0: It's A Trap!
 window.levelData = {
     id: 43,
-    title: "It's A Trap!",
+    title: "It's A Trap",
     author: "NellowTCS",
     difficulty: "Normal",
     matrix: [
