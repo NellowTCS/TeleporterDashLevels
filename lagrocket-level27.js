@@ -1,7 +1,7 @@
 // Level 27: Rocket
 window.levelData = {
     id: 27,
-    title: "Rocket",
+    title: "Lag Rocket",
     author: "NellowTCS",
     difficulty: "Easy",
     matrix: [
@@ -1011,7 +1011,7 @@ window.levelData = {
         0
     ]
 ],
-    music: "../Sound/Level Soundtracks/level1.ogg",
+    music: "../Sound/Level Soundtracks/level3.ogg",
     colorTransitionDuration: 0.5, 
     colorTransitionDelay: 0.1    
 };
