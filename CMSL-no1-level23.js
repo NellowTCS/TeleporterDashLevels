@@ -1,7 +1,7 @@
 window.levelData = {
     id: 23,
     author: "Claude",
-    title: "Teleporter's Trial",
+    title: "Level 1 - Teleporter's Trial",
     music: "../Sound/Level Soundtracks/level2.mp3",
     matrix: [
         // Ceiling row (constant -5)
