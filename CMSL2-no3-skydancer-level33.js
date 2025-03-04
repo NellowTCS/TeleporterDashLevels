@@ -1,7 +1,7 @@
-// Level 4: Sky Dancer
+// Level 3: Sky Dancer
 window.levelData = {
     id: 33,
-    title: "Level 4 - Sky Dancer",
+    title: "Level 3 - Sky Dancer",
     author: "Claude",
     difficulty: "Expert",
     matrix: [
