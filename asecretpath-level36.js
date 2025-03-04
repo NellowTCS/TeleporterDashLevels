@@ -1,7 +1,7 @@
 // Level 36: Secret Path
 window.levelData = {
     id: 36,
-    title: "Secret Path",
+    title: "A Secret Path",
     author: "NellowTCS",
     difficulty: "Hard",
     matrix: [
