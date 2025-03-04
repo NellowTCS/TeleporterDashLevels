@@ -1,6 +1,6 @@
 window.levelData = {
     id: 15,
-    title: "IDK",
+    title: "Test 1 - IDK",
     author: "NellowTCS",
     difficulty: "Easy",
     matrix: [
