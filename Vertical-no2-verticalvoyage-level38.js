@@ -1,7 +1,7 @@
-// Level 38: Vertical Voyage
+// Level 2: Vertical Voyage
 window.levelData = {
     id: 38,
-    title: "Vertical Voyage",
+    title: "Level 2 - Vertical Voyage",
     author: "Claude",
     difficulty: "Expert",
     matrix: [
