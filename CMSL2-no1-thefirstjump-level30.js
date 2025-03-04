@@ -1,7 +1,7 @@
 // Level 1: The First Jump
 window.levelData = {
     id: 30,
-    title: "The First Jump",
+    title: "Level 1 - The First Jump",
     author: "Claude",
     difficulty: "Easy",
     matrix: [
