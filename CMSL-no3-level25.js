@@ -1,7 +1,7 @@
 window.levelData = {
     id: 25,
     author: "Claude",    // Creator of the level
-    title: "Level 3 - Teleporter's Trial",
+    title: "Level 3 - Rebel's Radiance",
     music: "../Sound/Level Soundtracks/level3.mp3",
     matrix: [
         [-5, -4, -3, -2, -1, -5, -4, -3, -2, -1, -5, -4, -3, -2, -1, -5, -4, -3, -2, -1, -5, -4, -3, -2, -1, -5, -4, -3, -2, -1],
