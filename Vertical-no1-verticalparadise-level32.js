@@ -1,4 +1,4 @@
-// Level 3: Vertical Paradise
+// Level 1: Vertical Paradise
 window.levelData = {
     id: 32,
     title: "Level 1 - Vertical Paradise",
