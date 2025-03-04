@@ -1,7 +1,7 @@
-// Level 35: Epic Ascent
+// Level 34: Epic Ascent
 window.levelData = {
     id: 35,
-    title: "Level 5 - Epic Ascent",
+    title: "Level 4 - Epic Ascent",
     author: "Claude",
     difficulty: "Expert",
     matrix: [
@@ -738,7 +738,7 @@ window.levelData = {
         0
     ]
 ],
-    music: "../Sound/Level Soundtracks/level5.ogg",
+    music: "../Sound/Level Soundtracks/level4.ogg",
     colorTransitionDuration: 0.5, 
     colorTransitionDelay: 0.1    
 };
