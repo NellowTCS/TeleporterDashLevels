@@ -1,7 +1,7 @@
 // Level 3: Vertical Paradise
 window.levelData = {
     id: 32,
-    title: "Level 3 - Vertical Paradise",
+    title: "Level 1 - Vertical Paradise",
     author: "Claude",
     difficulty: "Expert",
     matrix: [
