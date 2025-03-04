@@ -1,6 +1,6 @@
 window.levelData = {
     id: 17,
-    title: "Idea",
+    title: "Teleporter Demonstration",
     author: "NellowTCS",
     difficulty: "Easy",
     matrix: [
