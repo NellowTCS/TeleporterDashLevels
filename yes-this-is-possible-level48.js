@@ -1230,7 +1230,7 @@ window.levelData = {
         "4/-4"
     ]
 ],
-    music: "../Sound/Level Soundtracks/SpotifyMate.com - Daylight - Yesterday_s New Quintet.mp3",
+    music: "../Sound/Level Soundtracks/Daylight - Yesterday_s New Quintet.mp3",
     colorTransitionDuration: 0.5, 
     colorTransitionDelay: 0.1    
 };
