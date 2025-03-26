@@ -1,7 +1,7 @@
 // Level 0: Yes This is Possible
 window.levelData = {
     id: 48,
-    title: "Yes This is Possible",
+    title: "MLC-1 - Yes This is Possible",
     author: "ET",
     difficulty: "Super Demon",
     matrix: [
