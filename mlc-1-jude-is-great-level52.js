@@ -1,9 +1,9 @@
-// Level 0: MLC-1 - [Jude is Great]
+// Level 0: MLC-1 - Jude is Great
 window.levelData = {
-    id: 52,
-    title: "MLC-1 - [Jude is Great]",
+    id: 0,
+    title: "MLC-1 - Jude is Great",
     author: "Jude McKinnies",
-    difficulty: "Easy",
+    difficulty: "Hard",
     matrix: [
     [
         0,
@@ -291,8 +291,8 @@ window.levelData = {
         0,
         "2/@270",
         "1",
-        "1",
-        "1",
+        "4",
+        "4",
         0,
         0,
         0,
@@ -495,8 +495,8 @@ window.levelData = {
         0,
         "2/@270",
         "1",
-        "3",
-        "3",
+        "0",
+        "0",
         0,
         0,
         0,
@@ -597,8 +597,8 @@ window.levelData = {
         0,
         "0",
         "1",
-        "3",
-        "3",
+        "0",
+        "0",
         0,
         0,
         0,
