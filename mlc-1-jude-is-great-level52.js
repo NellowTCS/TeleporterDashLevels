@@ -1,6 +1,6 @@
-// Level 0: MLC-1 - Jude is Great
+// Level 52: MLC-1 - Jude is Great
 window.levelData = {
-    id: 0,
+    id: 52,
     title: "MLC-1 - Jude is Great",
     author: "Jude McKinnies",
     difficulty: "Hard",
