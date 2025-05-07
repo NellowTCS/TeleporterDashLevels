@@ -1,7 +1,7 @@
-// Level 0: Rawr 
+// Level 55: Rawr 
 window.levelData = {
     id: 55,
-    title: "Rawr ",
+    title: "MLC-2 - Rawr ",
     author: "ChaosDemon",
     difficulty: "Harder",
     matrix: [
