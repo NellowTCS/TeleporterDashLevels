@@ -1,7 +1,7 @@
-// Level 0: MLC-1-Starry Jump
+// Level 0: MLC-2-Starry Jump
 window.levelData = {
     id: 56,
-    title: "MLC-1-Starry Jump",
+    title: "MLC-2-Starry Jump",
     author: "Etheblix",
     difficulty: "Harder",
     matrix: [
